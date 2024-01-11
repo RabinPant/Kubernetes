@@ -125,7 +125,34 @@ API sever - The heart of the k8 is API server which exposes k8 to the outer worl
 ### Manage Hundreds of Kubernetes clusters
 
 - KOPS is widely used.
-- 
+### Deploy app:
+pod => how to run a container
+- 1 or group of container => pod
+- app deployed in container have some dependency or trying to read some config file
+  then instead of creating a separate pod for each of them we create one pod and
+  put both the container in same pod and this will have some benefit like shared
+  networkign and storgae. this way container 1 can communicate with another pod with
+  localhost. 
 
+ -kubectl => command line for k8 which help to communicate with k8 cluster
+ -kubectl get pods
+ - kubectl describe pod my-app-pod
 
- 
+   four root level properties:
+   apiVersion:
+   kind:
+   metadata:
+   spec:
+```
+```
+apiVersion: v1
+kind: Pod
+metadata:
+ name: postgres
+ labels: 
+  tier: db-tier
+spec:
+ containers:
+  -name: postgres
+  image: postgres
+```
