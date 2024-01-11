@@ -123,7 +123,7 @@ API sever - The heart of the k8 is API server which exposes k8 to the outer worl
 -cloud-control-manager -> suppose you want to create a load balancer or storage in the aws, eks then at that time when we give command there has to be a underlying component that will help to understand those command and order aws to spin up those fetaure
 ```
 ### Manage Hundreds of Kubernetes clusters
-
+```
 - KOPS is widely used.
 ### Deploy app:
 pod => how to run a container
