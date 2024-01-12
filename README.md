@@ -156,3 +156,6 @@ spec:
   -name: postgres
   image: postgres
 ```
+```
+controlplane ~ ✖ kubectl run nginx --image=nginx
+```
