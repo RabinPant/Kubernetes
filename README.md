@@ -99,28 +99,38 @@ kops validate cluster demok8scluster.k8s.local
 ```
 In java you have java runtime to run application
 In docker you have docker engine and docker shimp to run the container
-similary, in k8 to deploy and run the pods we have something called kubelet. they are found in worker node. Its responsible for maintaining the pod, and inform k8 if not running, usually it informs the master node.
+similary, in k8 to deploy and run the pods we have something called kubelet. they are found in worker node.
+Its responsible for maintaining the pod, and inform k8 if not running, usually it informs the master node.
 
-- Docker has only one runtime dockershimp but in case of k8 we have multiple support like container-d-, cri-o- etc. These all helps us to run container inside the pods.
+- Docker has only one runtime dockershimp but in case of k8 we have multiple support like container-d-, cri-o- etc.
+ These all helps us to run container inside the pods.
 
--kubeproxy provides networking, ipaddress and loadbalancing feature
+-kubeproxy provides networking, ip-address and loadbalancing feature
 
-so we have container-run time which will run pod, kubelet which will maintian our pod and inform control plane or master node if something goes wrong and lastly kube-proxy for networking, scaling, ip-address and load balancing feature.
+so we have container-run time which will run pod, kubelet which will maintian our pod and inform control plane
+or master node if something goes wrong and lastly kube-proxy for networking, scaling, ip-address and load balancing
+feature.
 
 These all are data-plane or worker node component
 ```
 ### Control Plane/Master Node
 
 ```
-API sever - The heart of the k8 is API server which exposes k8 to the outer world. The data plane/worker node is internal and helps to run the application. but this API server which is in master node helps to take request from the outside world.
+API sever - The heart of the k8 is API server which exposes k8 to the outer world.
+The data plane/worker node is internal and helps to run the application. but this API server
+which is in master node helps to take request from the outside world.
 
--scheduler - when user tries to create the pod then he/she will use the API server and to schedule the pod creation in particular worker node there is anothe component called scheduler.
+-scheduler - when user tries to create the pod then he/she will use the API server and to schedule the pod
+creation in particular worker node there is anothe component called scheduler.
 
--ETCD - when we want to store the entire cluster information then in master node there is another component called etcd. this component is used for the backup of the cluster, since all info of cluster is saved if something goes wrong on the cluster, this info is used to spin another pod. its a key value store.
+-ETCD - when we want to store the entire cluster information then in master node there is another component called etcd.
+this component is used for the backup of the cluster, since all info of cluster is saved if something goes wrong on the cluster,
+this info is used to spin another pod. its a key value store.
 
 -controller manager => autoscaling, replicaset, insure the replicaset and autoscaling part is working properly. manager for inbuilt controller.
 
--cloud-control-manager -> suppose you want to create a load balancer or storage in the aws, eks then at that time when we give command there has to be a underlying component that will help to understand those command and order aws to spin up those fetaure
+-cloud-control-manager -> suppose you want to create a load balancer or storage in the aws, eks then at that time when we give
+command there has to be a underlying component that will help to understand those command and order aws to spin up those fetaure
 ```
 ### Manage Hundreds of Kubernetes clusters
 ```
