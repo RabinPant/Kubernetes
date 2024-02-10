@@ -169,7 +169,7 @@ spec:
 ```
 controlplane ~ ✖ kubectl run nginx --image=nginx
 ```
-### how to scale the replicaset
+### how to scale the replicaset in kubernetes
 ```
 change in the file and then run this command
 kubectl replace -f replicaset -defination.yml
@@ -178,3 +178,7 @@ kubectl scale --replicas=6 -f replicaset-defination.yml
 
 kubectl scale --replicas=6 replicaset myapp-replicaset
 ```
+
+
+
+
